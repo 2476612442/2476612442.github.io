@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>你的勇气补给！💪</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .quote-box {
+            font-size: 1.6em;
+            line-height: 1.5;
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            border-left: 5px solid #FFD700;
+        }
+        .refresh-btn {
+            background: #FFD700;
+            color: #333;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .refresh-btn:hover {
+            background: #FFED4A;
+            transform: translateY(-2px);
+        }
+        .instruction {
+            margin-top: 30px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 你的勇气补给！</h1>
+        <div class="quote-box" id="randomQuote">正在加载充满力量的话语...</div>
+        <button class="refresh-btn" onclick="getRandomQuote()">✨ 再给我一句力量！</button>
+        <p class="instruction">保存此页面，随时回来汲取勇气</p>
+    </div>
+
+    <script>
+        // 鼓励话语库 - 您可以随意修改这些句子！
+        const quotes = [
+            "Go for it! The worst that can happen is you learn something new. - 冲吧！最坏的结果也不过是你学到些新东西。",
+            "Your fear is a preview of your coming success. Don't walk out of the movie! - 你的恐惧正是你即将成功的预告片！别在正片前离场！",
+            "That thing you're afraid to do? That's the very door to your next level. KICK IT OPEN! - 你害怕去做的那些事？正是通往你人生下一关的大门。踹开它！",
+            "You are a freaking lion, not a mouse. Stop whispering and start ROARING! - 你是一头雄狮，不是一只老鼠。停止低语，开始咆哮吧！",
+            "Your comfort zone is a beautiful place, but nothing ever grows there. TIME TO BLOOM! - 舒适区是个好地方，但那里没有任何成长。是时候绽放了！",
+            "Let your courage be louder than your fear. - 让你的勇气响彻云霄，盖过你的恐惧。",
+            "Don't let fear write the story of your life. You are the author. Seize the pen! - 别让恐惧书写你的人生。你才是自己命运的执笔人。拿起笔来！",
+            "The fire in your heart is stronger than the fear in your mind. LET IT BURN! - 你心中的火焰，远比脑中的恐惧更为炽烈。让它燃烧吧！",
+            "Success is calling your name, but fear is muffling the sound. HANG UP ON FEAR! - 成功正在呼唤你的名字，而恐惧却捂住了你的耳朵。挂断恐惧的电话！",
+            "The world needs your voice, your ideas, your fire. Don't you dare hide it! - 这个世界需要你的声音、你的想法、你的火焰。你岂敢将它藏起！"
+        ];
+
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quoteParts = quotes[randomIndex].split(' - ');
+            document.getElementById('randomQuote').innerHTML = 
+                `"${quoteParts[0]}"<br><br><strong>${quoteParts[1]}</strong>`;
+        }
+
+        // 页面加载时显示一条随机语录
+        window.onload = getRandomQuote;
+    </script>
+</body>
+</html>
